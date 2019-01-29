@@ -1,0 +1,9 @@
+{
+    "globalDevDependencies": {
+      "phaser": "github:photonstorm/phaser-ce/typescript/typings.json"
+    },
+    "globalDependencies": {
+      "phaser-kinetic-scrolling-plugin": "file:phaser-kinetic-scrolling-plugin.d.ts"
+    }
+  }
+  

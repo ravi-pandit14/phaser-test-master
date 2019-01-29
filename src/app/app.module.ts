@@ -6,15 +6,33 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { ParallaxHeaderDirective } from '../directives/parallax-header/parallax-header';
+// import { SwiperModule, SwiperComponent, SwiperConfigInterface } from 'ngx-swiper-wrapper';
 
+// const config: SwiperConfigInterface = {
+//   initialSlide: 0,    
+//   direction: 'horizontal',
+//   keyboardControl: true,
+//   nextButton: '.swiper-button-next',
+//   prevButton: '.swiper-button-prev',
+//   parallax: false,
+//   speed: 600,
+//   pagination: '.swiper-pagination',
+//   slidesPerView: 1,
+//   paginationClickable: true,
+//   spaceBetween: 0,
+//   freeMode: true,
+// };
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ParallaxHeaderDirective
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    // SwiperModule.forRoot(config),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -22,6 +40,7 @@ import { HomePage } from '../pages/home/home';
     HomePage
   ],
   providers: [
+    // SwiperComponent,
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
