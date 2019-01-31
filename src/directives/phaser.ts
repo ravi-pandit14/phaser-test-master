@@ -36,7 +36,7 @@ export class PhaserScroller {
             window.innerHeight * 0.72, //height
             Phaser.CANVAS, //renderer
             'gamepo', //parent or DOM element id
-            { preload: this.preload.bind(this), create: this.create.bind(this), update: this.update.bind(this) }, //state object
+            { preload: this.preload.bind(this), create: this.create.bind(this), update: this.update.bind(this),render: this.render.bind(this) }, //state object
             true, //transparent
             false, //antialias
             { enableDebug: false } //physics config object
@@ -108,10 +108,21 @@ export class PhaserScroller {
     }
     onTap() {
         this.game.input.mspointer.capture = false;
-        console.log('tap');
+
+        // console.log('this.game.input.activePointer',this.game.input.activePointer);
         // debug.setText('tap', true);
       };
+      render() {
+        var debug = this.game.debug;
+        debug.inputInfo(20, 20, "red");
+        debug.pointer(this.game.input.activePointer, "yellow");
+        debug.device(420, 20, "black");
+        debug.phaser(10, 580, "gray");
+    //    monitorEvents(document, 'control');
+      }
     moveCallBack() {
+        // this.game.input.touch.preventDefault = false;
+        // console.log("this.gamethis.gamethis.game",this.game)
         // this.game.input.mspointer.active=true;
         // this.game.input.mspointer.start();
         // this.game.input.mspointer.capture = true;
